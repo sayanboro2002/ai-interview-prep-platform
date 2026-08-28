@@ -1,5 +1,5 @@
 {
-  "name": "yt-genai",
+  "name": "ai-interview-prep-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "dev": "npx nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sayan Boro",
   "license": "ISC",
   "dependencies": {
     "@google/genai": "^1.42.0",
