@@ -33,6 +33,27 @@ A full-stack MERN application designed to help job seekers prepare for technical
 
 ---
 
+## 📸 Application Screenshots
+
+### 🔑 Authentication
+| Register Page | Login Page |
+| --- | --- |
+| ![Register](./Frontend/src/assets/register-page.png) | ![Login](./Frontend/src/assets/login-page.png) |
+
+### 🎯 Strategy Generator & Technical Prep
+![Create Plan](./Frontend/src/assets/create-interview-plan.png)
+![Technical Questions](./Frontend/src/assets/technical-questions.png)
+
+### 🗓️ Behavioral Questions & Roadmap
+![Behavioral Questions](./Frontend/src/assets/behavioral-questions.png)
+![Preparation Roadmap](./Frontend/src/assets/preparation-roadmap.png)
+
+### 📄 Dashboard & Resume Preview
+![Recent Plans](./Frontend/src/assets/recent-plans-dashboard.png)
+![Resume Preview](./Frontend/src/assets/resume-preview.png)
+
+---
+
 ## 📂 Project Architecture & Folder Structure
 
 ```text
@@ -48,6 +69,7 @@ ai-interview-prep/
 │
 ├── Frontend/
 │   └── src/
+│       ├── assets/
 │       ├── features/
 │       └── style/
 │
