@@ -1,6 +1,5 @@
 import axios from "axios"
 
-
 const api = axios.create({
     baseURL: import.meta.env.VITE_API_BASE_URL || "https://ai-interview-prep-platform-2dlv.onrender.com",
     withCredentials: true
@@ -12,6 +11,10 @@ export async function register({ username, email, password }) {
         const response = await api.post('/api/auth/register', {
             username, email, password
         })
+
+        if (response.data && response.data.token) {
+            localStorage.setItem("token", response.data.token)
+        }
 
         return response.data
 
@@ -31,6 +34,10 @@ export async function login({ email, password }) {
             email, password
         })
 
+        if (response.data && response.data.token) {
+            localStorage.setItem("token", response.data.token)
+        }
+
         return response.data
 
     } catch (err) {
@@ -44,10 +51,12 @@ export async function logout() {
 
         const response = await api.get("/api/auth/logout")
 
+        localStorage.removeItem("token")
+
         return response.data
 
     } catch (err) {
-
+        console.log(err)
     }
 }
 

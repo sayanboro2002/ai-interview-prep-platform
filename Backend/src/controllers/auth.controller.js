@@ -55,6 +55,7 @@ async function registerUserController(req, res) {
 
     res.status(201).json({
         message: "User registered successfully",
+        token, // 👈 Bearer Token ফ্রন্টএন্ডের জন্য যোগ করা হয়েছে
         user: {
             id: user._id,
             username: user.username,
@@ -101,6 +102,7 @@ async function loginUserController(req, res) {
 
     res.status(200).json({
         message: "User loggedIn successfully.",
+        token, // 👈 Bearer Token ফ্রন্টএন্ডের জন্য যোগ করা হয়েছে
         user: {
             id: user._id,
             username: user.username,
@@ -116,7 +118,8 @@ async function loginUserController(req, res) {
  * @access public
  */
 async function logoutUserController(req, res) {
-    const token = req.cookies.token
+    const authHeader = req.headers.authorization;
+    const token = req.cookies.token || (authHeader && authHeader.startsWith("Bearer ") ? authHeader.split(" ")[1] : null);
 
     if (token) {
         await tokenBlacklistModel.create({ token })
